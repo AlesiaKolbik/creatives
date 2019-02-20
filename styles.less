@@ -61,6 +61,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .button_up {
+  transition: 0.5s ease;
   display: block;
   width: 40px;
   height: 40px;
@@ -68,12 +69,15 @@ h1, h2, h3, h4, h5 {
   border-radius: 50%;
   position: fixed;
   bottom: 20px;
-  right: 60px;
+  right: -60px;
   color: blue;
   text-transform: uppercase;
   text-align: center;
   line-height: 40px;
   background-color: rgba(0, 0, 255, 0.07);
+}
+.button_up.active{
+  right: 60px;
 }
 
 .wrapper_main {
