@@ -1,0 +1,568 @@
+@widthApp: 100%;
+@heightApp: auto;
+@black-color: #333333;
+@blue-color: #679ae5;
+@white-color: #ffffff;
+@grey-color: rgb(231, 231, 231);
+@text-color: @white-color;
+@color-lite-grey-transparent: rgba(87, 87, 87, 0.3);
+@container-width: 920px;
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: @widthApp;
+  height: @heightApp;
+  color: @text-color;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8em;
+
+  a {
+    color: @white-color;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+}
+
+h1, h2, h3, h4, h5 {
+  text-transform: uppercase;
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+.container {
+  width: @container-width;
+  margin: auto;
+}
+
+.wrapper, footer {
+  width: @widthApp;
+  background: @black-color;
+}
+
+.wrapper {
+  position: relative;
+  width: auto;
+  padding: 50px;
+}
+
+.button_up {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: solid 2px blue;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 60px;
+  color: blue;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 40px;
+  background-color: rgba(0, 0, 255, 0.07);
+}
+
+.wrapper_main {
+  box-shadow: 4px 5px 20px 4px #000000d1;
+  margin: auto;
+}
+
+.wrapper_header {
+  background: url("http://wallpapertop.net/wp-content/uploads/2018/05/Dark%20Background%20Pictures.jpg") no-repeat center top / cover;
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+.titles {
+  @height-title: 50px;
+  @margin-top-title: 100vh/2- @height-title/2;
+  margin-top: @margin-top-title;
+  text-align: center;
+}
+
+.titles h1 {
+  font-size: 8em;
+}
+
+.titles h6 {
+  font-size: 1em;
+  letter-spacing: 1.2em;
+  color: @blue-color;
+}
+
+.header-button-down {
+  margin-top: 20px;
+}
+
+.wrapper-button-down {
+  margin: 50px auto;
+  text-transform: none;
+}
+
+.button-down {
+  border: solid 1px white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.button-down i {
+  height: 10px;
+  margin: 50%-10px auto;
+}
+
+footer {
+  background: #353535;
+  padding: 20px 50px;
+  font-size: 0.8em;
+}
+
+footer .footer-info-left {
+  float: left;
+  margin-left: 50px;
+}
+
+footer .footer-info-right {
+  float: right;
+  margin-right: 50px;
+}
+
+header {
+  border-bottom: solid @grey-color 2px;
+  padding-bottom: 1px;
+}
+
+//logo
+.logo {
+  display: inline-block;
+  float: left;
+}
+
+.logo img {
+  width: 4em;
+}
+
+
+//navigation
+
+nav {
+  display: inline-block;
+  float: right;
+  padding: 0 20px;
+  text-transform: capitalize;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 20px 10px;
+  text-align: center;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+header {
+  li a {
+    display: block;
+    z-index: 100;
+  }
+}
+
+header li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: solid transparent 3px;
+  transform: translateZ(-1px);
+}
+
+li:hover::before, li.active::before {
+  border-color: @blue-color;
+}
+
+//titles
+
+h2 {
+  text-align: center;
+  position: relative;
+  transform-style: preserve-3d;
+  margin: 0;
+  padding: 100px 0;
+
+  &:after {
+    content: attr(data);
+    display: inline-block;
+    width: 120px;
+    position: absolute;
+    top: 28px;
+    left: calc(50% - 60px);
+    text-transform: uppercase;
+    font-size: 7em;
+    color: @color-lite-grey-transparent;
+    border: none;
+    transform: translateZ(-1px);
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: @color-lite-grey-transparent;
+  position: relative;
+
+  i {
+    position: absolute;
+    top: 37%;
+    left: 40%;
+    font-size: 16px;
+  }
+}
+
+h4 {
+  margin: 10px 0 15px;
+}
+
+.service_item, .solutions_item {
+  display: inline-block;
+  float: left;
+  width: calc((@container-width - 20px * 2 - 10px * 2) / 4);
+  text-align: center;
+  margin: 0 10px;
+
+  p {
+    text-align: justify;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.section__blue {
+  background: @blue-color;
+}
+
+.section__white {
+  background: @white-color;
+
+  h2, h4, h5, p {
+    color: @black-color
+  }
+
+  h4 {
+    text-transform: capitalize;
+    letter-spacing: 0.2em;
+    text-align: center;
+  }
+
+  .item_title {
+    color: @blue-color;
+    letter-spacing: 0.1em;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+section.section__blue {
+  padding: 80px 0;
+}
+
+.article__black {
+  background-color: @black-color;
+  background-image: url("img/preview1.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 50%;
+  height: 344px;
+}
+
+.article__lite-grey {
+  background-color: @grey-color;
+  background-image: url("img/preview2.jpg");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 50%;
+  height: 325px;
+}
+
+.article_post {
+  width: 400px;
+  line-height: 1.5em;
+  margin-top: 70px;
+
+  p {
+    margin-top: 10px;
+  }
+}
+
+.article_post__right {
+  float: right;
+  color: @black-color;
+}
+
+section.section__white {
+  padding-bottom: 50px;
+}
+
+.note-item {
+  display: inline-block;
+  float: left;
+  margin: 0 10px;
+  width: calc(100% / 2 - 20px * 2);
+
+  i {
+    display: inline-block;
+    float: left;
+    font-size: 5em;
+    padding: 5px;
+  }
+}
+
+.section__info, .section-contacts {
+  background-image: url("img/art-beleuchtet-bildschirm-220357.png");
+  background-repeat: no-repeat;
+  background-color: black;
+  background-position: top right;
+  background-size: cover;
+
+}
+
+.section__info img {
+  margin: 50px;
+}
+
+.info {
+  float: left;
+  width: 400px;
+
+  h4 {
+    margin-top: 100px;
+    margin-bottom: 20px;
+  }
+
+  ul li {
+    display: block;
+    padding: 5px;
+    margin: 5px 0;
+    background: @blue-color;
+    text-transform: uppercase;
+  }
+
+}
+
+.team {
+  div {
+    float: left;
+    display: inline-block;
+    width: 211px;
+    margin: 12px;
+    position: relative;
+
+    &::before {
+      content: attr(data);
+      text-transform: uppercase;
+      color: @blue-color;
+      display: inline-block;
+      width: 100%;
+      height: 10%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+}
+
+.section-contacts {
+  background-image: url("img/BRF-Contact-US-Background.png");
+
+  form {
+    width: 100%;
+    text-align: center;
+
+    fieldset {
+      border: none;
+      text-align: center;
+
+      input {
+        display: inline-block;
+        height: 20px;
+        padding: 15px;
+        width: calc((100% - 50px) / 3);
+        box-sizing: border-box;
+        margin: 0 10px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      margin-top: 20px;
+      padding: 20px;
+    }
+
+    button {
+      text-align: center;
+      padding: 10px 20px;
+      width: 100px;
+      background: @blue-color;
+      border: none;
+      color: @white-color;
+      margin: 20px auto 50px;
+    }
+
+  }
+
+}
+
+.style-form {
+  color: @white-color;
+  background-color: transparent;
+  border: solid 1px @white-color;
+}
+
+.map {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    margin-left: 5px;
+  }
+
+  @container-width: 100%;
+  .wrapper, .wrapper_main.container {
+    width: @container-width;
+    padding: 0;
+  }
+
+  .service_item, .solutions_item {
+    width: calc((@container-width - 10px * 8) / 4);
+    margin: 10px;
+  }
+}
+
+@media (max-width: 939px) {
+  .titles {
+    h1 {
+      font-size: 3em;
+    }
+
+    h6 {
+      letter-spacing: 0.2em;
+    }
+  }
+  .wrapper_header{
+    height: 300px!important;
+  }
+
+  .wrapper-button-down {
+    display: none;
+  }
+
+  .wrapper, .wrapper_main, .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .service_item, .solutions_item, .team div {
+    width: calc((100vw - 10px * 8) / 4);
+    margin: 10px;
+  }
+
+  .info {
+    width: 100%;
+    text-align: center;
+  }
+  .section__info{
+    img{
+      width: 10%;
+    }
+  }
+  .article_post{
+    width: 100%;
+    margin-top: 0;
+    padding: 5px;
+  }
+  .article__black, .article__lite-grey{
+    background-position: bottom left;
+  }
+  nav{
+    font-size: 0.7em;
+  }
+  section.section__blue {
+    padding: 25px 0;
+  }
+  h2{
+    font-size: 0.9em;
+    padding: 50px;
+    &:after{
+      top: 34px;
+      font-size: 3em;
+    }
+  }
+  .icon{
+    width: 40px;
+    height: 40px;
+    font-size: 1em;
+    i{
+      top: 30%;
+      left: 30%;
+    }
+  }
+
+
+}
+
+
+
+
